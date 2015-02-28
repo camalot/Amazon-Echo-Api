@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve">
+<g>
+	<path fill="#CDCCCB" d="M8 10.4C-2.9 22.5-1.8 41.2 10.4 52c12.2 10.8 30.8 9.8 41.6-2.4C62.9 37.5 61.8 18.8 49.6 8 C37.5-2.9 18.8-1.8 8 10.4z M47.5 45.6c-8.6 9.6-23.4 10.5-33 1.9c-9.6-8.6-10.5-23.4-1.9-33c8.6-9.6 23.4-10.5 33-1.9 C55.2 21.1 56.1 35.9 47.5 45.6z"/>
+	
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-1851.1" y1="4198.2" x2="-1807.1" y2="4159" gradientTransform="matrix(0.6651 -0.7468 0.7468 0.6651 -1870.3237 -4115.1831)">
+		<stop offset="5.102040e-03" style="stop-color:#CDCCCB;stop-opacity:0"/>
+		<stop offset="0.3819" style="stop-color:#969594;stop-opacity:0.3787"/>
+		<stop offset="1" style="stop-color:#343433"/>
+	</linearGradient>
+	<path fill="url(#SVGID_1_)" d="M45.6 12.5c9.6 8.6 10.5 23.4 1.9 33c-4.2 4.7-9.9 7.3-15.7 7.8l0.4 6.1c7.4-0.5 14.6-3.8 19.9-9.8 C62.9 37.5 61.8 18.8 49.6 8C37.5-2.9 18.8-1.8 8 10.4l4.6 4.1C21.1 4.8 35.9 3.9 45.6 12.5z"/>
+	<path opacity="0.9" fill="#FFFFFF" d="M12.6 14.5c-0.6 0.7-1.1 1.3-1.7 2.1L6 12.9c0.6-0.9 1.3-1.7 2-2.5L12.6 14.5z"/>
+</g>
+</svg>

@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".git", ".git", "{5AB9697C-5
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StylishMaterialTheme", "StylishMaterialTheme\StylishMaterialTheme.csproj", "{AD36BC90-13CD-4705-91D9-B8DB9C6A1461}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{CB1C06D3-FB86-43BA-A723-B4D1523536B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB1C06D3-FB86-43BA-A723-B4D1523536B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB1C06D3-FB86-43BA-A723-B4D1523536B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD36BC90-13CD-4705-91D9-B8DB9C6A1461}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD36BC90-13CD-4705-91D9-B8DB9C6A1461}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD36BC90-13CD-4705-91D9-B8DB9C6A1461}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD36BC90-13CD-4705-91D9-B8DB9C6A1461}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

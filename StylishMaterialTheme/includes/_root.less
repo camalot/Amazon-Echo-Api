@@ -1,0 +1,51 @@
+﻿@import "_colors.less";
+
+* {
+	outline: none;
+}
+
+body, body.no-touch {
+	font-family: Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif !important;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+
+
+#d-main {
+	&.desktop {
+		#d-app {
+			max-width: none;
+			box-shadow: none;
+
+			#d-content {
+				top: 3.78rem;
+			}
+		}
+
+		#d-player-bar-container {
+			max-width: none;
+		}
+	}
+}
+
+#d-header {
+	background-color: @indigo-600;
+	height: 60px;
+
+	.maintext {
+		margin-bottom: 0;
+		margin-top: .4rem;
+	}
+}
+
+html,
+body,
+.d-background,
+#d-navigate,
+.d-menu {
+	background: none;
+	background-color: @grey-900;
+}

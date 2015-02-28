@@ -57,9 +57,14 @@ namespace AmazonEchoApi {
 			private const string FEATURE_PHOENIX = "PHOENIX_FEATURE";
 		}
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="AlexaRequest"/> class.
+		/// </summary>
+		/// <param name="username">The username.</param>
+		/// <param name="password">The password.</param>
 		public AlexaRequest(string username, string password) {
-			Username = username;
-			Password = password;
+			Username = username.Require();
+			Password = password.Require();
 			Cookies = new CookieContainer();
 
 			ServicePointManager.ServerCertificateValidationCallback += delegate(object sender, System.Security.Cryptography.X509Certificates.X509Certificate certificate,
@@ -71,15 +76,22 @@ namespace AmazonEchoApi {
 
 		private string Username { get; set; }
 		private string Password { get; set; }
-
 		private CookieContainer Cookies { get; set; }
 
+		/// <summary>
+		/// Gets the tasks.
+		/// </summary>
+		/// <returns></returns>
 		public IEnumerable<TaskItem> GetTasks() {
 			if(Login()) {
 				return DeserializeStream<TaskItemCollection>(Urls.TASKS).Values;
 			}
 			return null;
 		}
+		/// <summary>
+		/// Gets the shopping items.
+		/// </summary>
+		/// <returns></returns>
 		public IEnumerable<TaskItem> GetShoppingItems() {
 			if(Login()) {
 				return DeserializeStream<TaskItemCollection>(Urls.SHOPPING).Values;
@@ -87,6 +99,11 @@ namespace AmazonEchoApi {
 			return null;
 		}
 
+		/// <summary>
+		/// Determines whether the specified feature is supported.
+		/// </summary>
+		/// <param name="feature">The feature.</param>
+		/// <returns></returns>
 		public bool HasSupport(string feature) {
 			if(Login()) {
 				var result = DeserializeStream<FeatureAccessResult>(Urls.FEATURE_ACCESS_FORMAT.With(feature.Require()));
@@ -95,6 +112,11 @@ namespace AmazonEchoApi {
 			return false;
 		}
 
+		/// <summary>
+		/// Updates the task item.
+		/// </summary>
+		/// <param name="task">The task.</param>
+		/// <returns></returns>
 		public TaskItem UpdateTaskItem(TaskItem task) {
 			if(Login()) {
 				var result = Put<TaskItem>(task, Urls.TASK_PUT_FORMAT.With(task.Id));
@@ -104,6 +126,11 @@ namespace AmazonEchoApi {
 		}
 
 
+		/// <summary>
+		/// Plays the specified device.
+		/// </summary>
+		/// <param name="device">The device.</param>
+		/// <returns></returns>
 		public bool Play(EchoDevice device) {
 			if(Login()) {
 				var result = Post<MediaStatePayload>(new MediaStatePayload {
@@ -116,6 +143,12 @@ namespace AmazonEchoApi {
 			return false;
 		}
 
+		/// <summary>
+		/// Plays the specified device.
+		/// </summary>
+		/// <param name="deviceSerialNumber">The device serial number.</param>
+		/// <param name="deviceType">Type of the device.</param>
+		/// <returns></returns>
 		public bool Play(string deviceSerialNumber, string deviceType) {
 			return Play(new EchoDevice {
 				Type = deviceType.Require(),
@@ -123,6 +156,11 @@ namespace AmazonEchoApi {
 			});
 		}
 
+		/// <summary>
+		/// Stops the specified device.
+		/// </summary>
+		/// <param name="device">The device.</param>
+		/// <returns></returns>
 		public bool Stop(EchoDevice device) {
 			if(Login()) {
 				var result = Post<MediaStatePayload>(new MediaStatePayload {
@@ -135,6 +173,12 @@ namespace AmazonEchoApi {
 			return false;
 		}
 
+		/// <summary>
+		/// Stops the specified device.
+		/// </summary>
+		/// <param name="deviceSerialNumber">The device serial number.</param>
+		/// <param name="deviceType">Type of the device.</param>
+		/// <returns></returns>
 		public bool Stop(string deviceSerialNumber, string deviceType) {
 			return Stop(new EchoDevice {
 				Type = deviceType.Require(),
@@ -142,6 +186,12 @@ namespace AmazonEchoApi {
 			});
 		}
 
+		/// <summary>
+		/// Sets the volume on the specified device.
+		/// </summary>
+		/// <param name="device">The device.</param>
+		/// <param name="volume">The volume.</param>
+		/// <returns></returns>
 		public bool Volume(EchoDevice device, int volume) {
 			if(Login()) {
 				var result = Post<MediaStatePayload>(new MediaStatePayload {
@@ -154,6 +204,13 @@ namespace AmazonEchoApi {
 			return false;
 		}
 
+		/// <summary>
+		/// Sets the volume on the specified device.
+		/// </summary>
+		/// <param name="deviceSerialNumber">The device serial number.</param>
+		/// <param name="deviceType">Type of the device.</param>
+		/// <param name="volume">The volume.</param>
+		/// <returns></returns>
 		public bool Volume(string deviceSerialNumber, string deviceType, int volume) {
 			return Volume(new EchoDevice {
 				Type = deviceType.Require(),
@@ -161,6 +218,11 @@ namespace AmazonEchoApi {
 			}, volume);
 		}
 
+		/// <summary>
+		/// Mutes the specified device.
+		/// </summary>
+		/// <param name="device">The device.</param>
+		/// <returns></returns>
 		public bool Mute(EchoDevice device) {
 			if(Login()) {
 				var result = Post<MediaStatePayload>(new MediaStatePayload {
@@ -173,6 +235,12 @@ namespace AmazonEchoApi {
 			return false;
 		}
 
+		/// <summary>
+		/// Mutes the specified device serial number.
+		/// </summary>
+		/// <param name="deviceSerialNumber">The device serial number.</param>
+		/// <param name="deviceType">Type of the device.</param>
+		/// <returns></returns>
 		public bool Mute(string deviceSerialNumber, string deviceType) {
 			return Mute(new EchoDevice {
 				Type = deviceType.Require(),
@@ -180,10 +248,19 @@ namespace AmazonEchoApi {
 			});
 		}
 
+		/// <summary>
+		/// Logout of Echo service.
+		/// </summary>
+		/// <returns></returns>
 		public bool Logout() {
 			return GetDataStream(Urls.LOGOUT) != null;
 		}
 
+		/// <summary>
+		/// Login to the Echo service.
+		/// </summary>
+		/// <returns></returns>
+		/// <exception cref="System.Net.WebException"></exception>
 		public bool Login() {
 
 			// this needs to check if we need to log in, or if we are already logged in.

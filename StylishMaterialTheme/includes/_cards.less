@@ -1,0 +1,115 @@
+﻿@import "_colors.less";
+@import "_mixins.less";
+
+.d-card {
+	margin: .625rem 1.3125rem .625rem 1.3125rem;
+	border-radius: 2px;
+	.shadow-z-1();
+
+
+	.d-delete-action-region {
+		&, &:hover {
+			background-color: transparent;
+		}
+	}
+
+	.d-feedback-action-region {
+		&, &:hover {
+			background-color: transparent;
+		}
+	}
+
+	.d-secondary-actions-region {
+		&, &:hover {
+			background-color: transparent;
+		}
+	}
+
+	.d-actions {
+		display: block;
+
+		li {
+			&:hover {
+				background-color: transparent !important;
+			}
+
+			&, &:last-child {
+				border: none;
+			}
+		}
+
+		&.secondary {
+			margin-right: 25px;
+			.d-action:hover {
+				text-decoration: underline;
+			}
+		}
+
+		&.delete-action {
+			.d-action {
+				text-transform: uppercase;
+				color: @danger !important;
+				float: right;
+
+				> .navigate {
+					display: none !important;
+				}
+
+				span {
+					position: relative;
+					float: right;
+				}
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		&.feedback {
+			.d-action:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	// TODO Card
+	.d-to-do-item {
+
+		.d-button {
+			.action-delete {
+				text-transform: uppercase;
+				color: @danger;
+			}
+		}
+		// TASK Card
+		&.d-to-do-type-task {
+			> .d-card-stripe {
+				background-color: @todo-color;
+			}
+
+			.d-input-wrapper {
+				.title {
+					color: @todo-color;
+
+					.edit-icon-svg {
+					}
+				}
+			}
+		}
+		// SHOPPING Card
+		&.d-to-do-type-shopping {
+			> .d-card-stripe {
+				background-color: @shopping-color;
+			}
+
+			.d-input-wrapper {
+				.title {
+					color: @shopping-color;
+
+					.edit-icon-svg {
+					}
+				}
+			}
+		}
+	}
+}

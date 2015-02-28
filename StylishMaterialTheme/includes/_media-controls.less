@@ -1,0 +1,48 @@
+﻿@import "_colors.less";
+@import "_mixins.less";
+
+#d-player-bar-container {
+	background-color: @white;
+	border-top: 2px solid @grey-300;
+	.d-controls-bar {
+		> .d-controls-region {
+			.d-control-button {
+				.music-control {
+					fill: @grey;
+				}
+			}
+		}
+
+		> .d-volume-region {
+			.d-volume {
+				.music-control {
+					fill: @grey;
+				}
+			}
+		}
+
+		> .d-meta-container {
+
+			#d-info-text {
+				> .d-main-text {
+					color: @grey-700;
+				}
+
+				.d-sub-text-1 {
+				}
+
+				.d-sub-text-2 {
+				}
+			}
+		}
+	}
+}
+
+#d-np-controls-region #d-shuffle.on .svg-icon, #d-player-bar-container .on .svg-icon {
+	fill: #FF5722 !important;
+}
+
+.vertical .d-slider-bar:after,
+.vertical .d-slider-bar {
+	background-color: #8BC34A;
+}
