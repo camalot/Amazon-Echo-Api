@@ -2,11 +2,253 @@
 @import "_mixins.less";
 
 #icon-squircle-todo {
-  fill: @todo-color;
+	fill: @todo-color;
 }
+
 #icon-squircle-shopping {
-  fill: @shopping-color;
+	fill: @shopping-color;
 }
-#icon-squircle-check{
+
+#icon-squircle-check {
 	fill: @black;
+}
+
+.d-to-do-list-region {
+	background-color: #f2f2f2;
+}
+
+#d-to-do-header {
+	background-color: @todo-color;
+	color: @todo-color;
+
+	.options {
+		.print {
+			/*&:before {
+				font-family: FontAwesome;
+				content: '\f02f';
+				margin-right: 4px;
+			}*/
+		}
+	}
+
+	.item-text-wrapper {
+		#item-text {
+			&, &:hover, &:active, &:focus {
+				background-color: @white;
+				border: none;
+			}
+		}
+
+		.add-item {
+			background-color: transparent !important;
+			> .svg-add {
+				fill: @grey-400;
+			}
+
+			&:hover, &:active {
+				background-color: transparent !important;
+
+				> .svg-add {
+					fill: @grey-700;
+				}
+			}
+		}
+	}
+
+}
+
+.shopping #d-to-do-header {
+	background-color: @shopping-color;
+	color: @shopping-color;
+}
+
+#d-to-do-list {
+	li {
+		&.to-do-item {
+			border-bottom: 1px solid #eee;
+			cursor: pointer;
+			height: auto;
+			line-height: 3.0625rem;
+			min-height: 3.0625rem;
+			margin: .0625rem 0 0 1.25rem;
+			padding-bottom: .0625rem;
+			position: relative;
+
+			&:before {
+				background-color: @todo-color;
+				height: 100%;
+			}
+
+			&.complete {
+				.delete {
+					text-transform: uppercase;
+					font-weight: bolder;
+					color: @danger;
+
+					&:hover {
+						text-decoration: underline;
+						color: @danger !important;
+					}
+				}
+			}
+			// shopping items
+			&.d-to-do-type-shopping {
+				> .d-input-wrapper {
+					.d-n-best-list-region,
+					.title {
+						color: @shopping-color;
+					}
+				}
+			}
+			// task item
+			&.d-to-do-type-task {
+				> .d-input-wrapper {
+					.d-n-best-list-region,
+					.title {
+						color: @todo-color;
+					}
+				}
+			}
+
+			> .d-delete {
+				text-transform: uppercase;
+				font-weight: bold;
+				float: right;
+				margin-right: 5px;
+				color: @danger;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+
+			&.actions-open {
+				// card styling for open todo
+				.mtrl-card();
+
+				&:before {
+					left: 0;
+					width: .47rem;
+				}
+
+				.todo-less {
+					width: 1rem;
+					height: 1rem;
+				}
+
+				.actions {
+					background: none;
+					background-color: transparent;
+					border: none;
+					clear: both;
+
+					.action {
+						display: inline-block;
+						border: none;
+
+						> .long-text {
+							display: inline;
+						}
+
+						&:hover, &:active {
+							background: none;
+							background-color: transparent;
+						}
+
+						&:not(.delete) {
+							display: block;
+						}
+
+						&.delete {
+							text-transform: uppercase;
+							color: @danger;
+							position: absolute;
+							right: 10px;
+							font-weight: bold;
+
+							&:hover {
+								text-decoration: underline;
+							}
+						}
+					}
+
+					.todo-audio-playback {
+						display: inline-block;
+					}
+				}
+
+				.text-wrapper {
+					overflow: visible;
+					margin-left: 20px;
+					clear: right;
+
+					&.content-editable {
+						margin-bottom: 0;
+
+						input {
+							border: 1px solid groove;
+						}
+
+						button {
+							background-color: @primary;
+							color: @white;
+							width: auto;
+							.mtrl-button();
+							margin: 0 !important;
+						}
+					}
+
+					.text.active + .edit-icon-svg {
+						padding-top: 4px;
+					}
+
+					.text {
+						margin: 0;
+						padding: 0;
+						border: none;
+						background: transparent;
+						font-size: 1.4175rem;
+						font-weight: 200;
+						cursor: text;
+						float: left;
+						-ms-word-break: break-all;
+						word-break: break-all;
+						min-height: 1.125rem;
+						line-height: 2rem;
+						text-transform: capitalize;
+						margin-top: -5px;
+						color: @todo-color;
+						width: auto;
+					}
+				}
+			}
+		}
+	}
+}
+
+.shopping {
+	#d-to-do-list {
+		li {
+			&.to-do-item {
+				&:before {
+					background-color: @shopping-color;
+				}
+
+				&.actions-open {
+					.text-wrapper {
+						.text {
+							color: @shopping-color;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+#d-to-do-list .text-wrapper .text.active + .edit-icon-svg {
+	position: absolute;
+	float: right;
+	padding-top: 4px;
 }

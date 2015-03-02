@@ -4,6 +4,7 @@
 #d-player-bar-container {
 	background-color: @white;
 	border-top: 2px solid @grey-300;
+
 	.d-controls-bar {
 		> .d-controls-region {
 			.d-control-button {
@@ -22,27 +23,53 @@
 		}
 
 		> .d-meta-container {
+			.song-title-info();
+		}
+	}
+}
 
-			#d-info-text {
-				> .d-main-text {
-					color: @grey-700;
+.vertical .d-slider-bar:after,
+.vertical .d-slider-bar {
+	background-color: @light-green;
+}
+
+
+.d-controls-container {
+	button {
+		&.d-control-button {
+			.music-control {
+				fill: @grey;
+			}
+
+			&.on {
+				.music-control {
+					fill: @orange-300;
 				}
 
-				.d-sub-text-1 {
+				&:hover {
+					.music-control {
+						fill: @orange-600 !important;
+					}
 				}
+			}
 
-				.d-sub-text-2 {
+			&:not(.on):hover {
+				.music-control {
+					fill: @grey-700 !important;
 				}
 			}
 		}
 	}
 }
 
-#d-np-controls-region #d-shuffle.on .svg-icon, #d-player-bar-container .on .svg-icon {
-	fill: #FF5722 !important;
-}
+#d-np-progress-region {
+	#d-progress-bar-container {
+		background: none;
+		background-color: @grey-300;
 
-.vertical .d-slider-bar:after,
-.vertical .d-slider-bar {
-	background-color: #8BC34A;
+		#d-progress-bar {
+			background: none;
+			background-color: @light-green;
+		}
+	}
 }

@@ -59,8 +59,11 @@
   <ItemGroup>
     <Content Include="demo\css\682ad-app.min.css" />
     <Content Include="demo\css\bootstrap.min.css" />
+    <Content Include="demo\html\amazonmusic.html" />
+    <Content Include="demo\html\nowplaying.html" />
+    <Content Include="demo\html\todo.html" />
     <Content Include="demo\html\index.html" />
-    <Content Include="demo\html\cards.html" />
+    <Content Include="demo\html\shopping.html" />
     <Content Include="demo\img\sprites\55977-spinner-grey-opt.svg" />
     <Content Include="demo\img\sprites\eeb15-logo-sprite.svg" />
     <Content Include="stylish.css">
@@ -108,6 +111,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="includes\_media-controls.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="includes\_amazon-music.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="includes\_now-playing.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="includes\_notification.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="includes\_switch.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="includes\_settings.less" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

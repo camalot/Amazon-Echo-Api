@@ -194,12 +194,15 @@ namespace AmazonEchoApi {
 		/// <returns></returns>
 		public bool Volume(EchoDevice device, int volume) {
 			if(Login()) {
-				var result = Post<MediaStatePayload>(new MediaStatePayload {
-					DeviceSerialNumber = device.SerialNumber,
-					DeviceType = device.Type,
-					NewMediaVolume = volume.RequireBetween(-1, 101)
-				}, Urls.SET_MEDIA_STATE_FORMAT.With(MediaStates.VOLUME));
-				return result != null;
+				var options = Options(Urls.SET_MEDIA_STATE_FORMAT.With(MediaStates.VOLUME));
+				if(options == HttpStatusCode.OK) {
+					var result = Post<MediaStatePayload>(new MediaStatePayload {
+						DeviceSerialNumber = device.SerialNumber,
+						DeviceType = device.Type,
+						NewMediaVolume = volume.RequireBetween(-1, 101)
+					}, Urls.SET_MEDIA_STATE_FORMAT.With(MediaStates.VOLUME));
+					return result != null;
+				}
 			}
 			return false;
 		}
@@ -225,12 +228,15 @@ namespace AmazonEchoApi {
 		/// <returns></returns>
 		public bool Mute(EchoDevice device) {
 			if(Login()) {
-				var result = Post<MediaStatePayload>(new MediaStatePayload {
-					DeviceSerialNumber = device.SerialNumber,
-					DeviceType = device.Type,
-					NewMediaVolume = 0
-				}, Urls.SET_MEDIA_STATE_FORMAT.With(MediaStates.VOLUME));
-				return result != null;
+				var options = Options(Urls.SET_MEDIA_STATE_FORMAT.With(MediaStates.VOLUME));
+				if(options == HttpStatusCode.OK) {
+					var result = Post<MediaStatePayload>(new MediaStatePayload {
+						DeviceSerialNumber = device.SerialNumber,
+						DeviceType = device.Type,
+						NewMediaVolume = 0
+					}, Urls.SET_MEDIA_STATE_FORMAT.With(MediaStates.VOLUME));
+					return result != null;
+				}
 			}
 			return false;
 		}
@@ -346,11 +352,29 @@ namespace AmazonEchoApi {
 			return SendPayload<T>(url, HttpMethods.POST, payload);
 		}
 
+		private HttpStatusCode Options(string url) {
+			var req = HttpWebRequestBuilder.Build(new Uri(Urls.BASE + url))
+					.Setting(x => x.UserAgent, Defaults.USERAGENT)
+					.Setting(x => x.Referer, Defaults.REFERER)
+					.Setting(x => x.CookieContainer, Cookies)
+					.Setting(x => x.Method, HttpMethods.OPTIONS)
+					.SetHeader("Access-Control-Request-Method", "POST")
+					.SetHeader("Access-Control-Request-Headers", "accept, csrf, content-type")
+					.SetHeader("Origin", Defaults.ORIGIN)
+					.Create();
+			var resp = req.GetResponse() as HttpWebResponse;
+			return resp.StatusCode;
+		}
+
 		private T SendPayload<T>(string url, string method, T payload) {
 			try {
 				var sb = new StringBuilder();
 				// this finds the csrf cookie. if it exists, it will be added as a header
 				var csrf = FindCookie("csrf");
+
+				foreach(Cookie f in Cookies.GetCookies(new Uri(Defaults.ORIGIN))) {
+					Console.WriteLine("{0}:{1}",f.Name,f.Value);
+				}
 
 				var req = HttpWebRequestBuilder.Build(new Uri(Urls.BASE + url))
 					.Setting(x => x.UserAgent, Defaults.USERAGENT)

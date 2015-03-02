@@ -4,15 +4,23 @@
 	outline: none;
 }
 
+#feedly-mini {
+	// this gets in the way if it is installed.
+	display:none !important;
+}
+
 body, body.no-touch {
 	font-family: Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif !important;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	cursor: default;
 }
 
-
+menu, ol, ul {
+	padding: 0;
+}
 
 #d-main {
 	&.desktop {
@@ -32,7 +40,7 @@ body, body.no-touch {
 }
 
 #d-header {
-	background-color: @indigo-600;
+	background-color: @header-color;
 	height: 60px;
 
 	.maintext {

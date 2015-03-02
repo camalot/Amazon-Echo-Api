@@ -4,7 +4,7 @@
 .d-card {
 	margin: .625rem 1.3125rem .625rem 1.3125rem;
 	border-radius: 2px;
-	.shadow-z-1();
+	.shadow-z-2();
 
 
 	.d-delete-action-region {
@@ -76,9 +76,13 @@
 	.d-to-do-item {
 
 		.d-button {
-			.action-delete {
+			&.action-delete {
 				text-transform: uppercase;
+				font-weight: bold;
 				color: @danger;
+				&:hover {
+					text-decoration: underline;
+				}
 			}
 		}
 		// TASK Card

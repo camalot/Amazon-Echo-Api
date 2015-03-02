@@ -1,0 +1,140 @@
+﻿@import "_colors.less";
+@import "_mixins.less";
+
+.d-button-second {
+	background: none;
+	.mtrl-button();
+
+	&.dee-device-deregister {
+		background-color: @danger;
+		color: @grey-100;
+	}
+}
+
+
+#dee-scone-unpair {
+	.d-button-second {
+		background-color: @danger;
+		color: @grey-100;
+	}
+}
+
+.d-menu {
+	&.d-settings {
+
+		.edit-button {
+			.mtrl-button();
+			background-color: @green;
+			color: @grey-100;
+
+			&:hover {
+				color: @grey-100 !important;
+			}
+		}
+
+		.save-button {
+			background-color: @primary;
+			color: @grey-100;
+
+			&:hover {
+				color: @grey-100 !important;
+			}
+		}
+
+		input.input-edit[type="text"] {
+			border: none !important;
+			background-color: @white !important;
+			border-bottom: solid 2px @grey-300 !important;
+			box-shadow: none !important;
+		}
+
+		> div {
+			width: auto;
+
+
+
+			button {
+				.mtrl-button();
+			}
+		}
+	}
+}
+
+
+#dee-beta-feedback-form {
+
+	form {
+		.mtrl-card();
+		margin: 1rem auto;
+
+		.send {
+			.mtrl-button();
+			background-color: @primary !important;
+			color: @grey-100;
+
+			&:hover {
+				background-color: @primary !important;
+				color: @grey-100;
+			}
+		}
+	}
+}
+
+#d-page.white {
+	background-color: @grey-100;
+}
+
+#d-center-content.large {
+	.mtrl-card();
+	margin: 1rem auto;
+	height: auto !important;
+	padding-bottom: 4rem;
+
+	.vt-header {
+		margin-top: 0;
+		color: @grey;
+		border-bottom: solid 1px @grey-200;
+	}
+}
+
+#voice-training-content {
+	.vt-primary-button {
+		.mtrl-button();
+		background-color: @primary !important;
+		color: @grey-100;
+
+		&:hover {
+			background-color: @primary !important;
+			color: @grey-100;
+		}
+	}
+
+	.vt-secondary-button {
+		.mtrl-button();
+		background-color: @blue-grey !important;
+			color: @grey-100 !important;
+		&:hover {
+			background-color: @blue-grey !important;
+			color: @grey-100;
+		}
+		&.left {
+		}
+	}
+}
+
+#vt-pause-region {
+	> div {
+		> a {
+			.mtrl-button();
+			background-color: @danger !important;
+			color: @grey-100 !important;
+			margin-right: 15px;
+			margin-top: 15px;
+
+			&:hover {
+				background-color: @danger !important;
+				color: @grey-100 !important;
+			}
+		}
+	}
+}

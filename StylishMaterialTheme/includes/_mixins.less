@@ -1,1 +1,48 @@
-﻿@import "_shadows.less";
+﻿@import "_colors.less";
+@import "_shadows.less";
+
+.song-title-info() {
+	#d-info-text {
+		> .d-main-text {
+			color: @grey-700;
+		}
+
+		.d-sub-text-1 {
+		}
+
+		.d-sub-text-2 {
+		}
+	}
+}
+
+.mtrl-button() {
+	padding: 8px 30px !important;
+	border: 0;
+	cursor: pointer;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: none;
+	width: auto;
+	&:hover {
+		.shadow-z-2-hover();
+	}
+
+	&:active {
+		.shadow-z-3();
+	}
+}
+
+.mtrl-card () {
+	position: relative;
+	background: @white;
+	padding: 1.25rem;
+	font-size: .875rem;
+	font-weight: 200;
+	color: #333;
+	margin: .625rem 1.3125rem .625rem 1.3125rem;
+	border-radius: 2px;
+	.shadow-z-2();
+}

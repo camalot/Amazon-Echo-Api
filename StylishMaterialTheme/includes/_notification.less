@@ -1,0 +1,25 @@
+﻿@import "_colors.less";
+@import "_mixins.less";
+
+.dee-notification-details {
+	.mtrl-card();
+
+	.button-timer-container {
+		button {
+			.mtrl-button();
+			color: @grey-50;
+
+			&.dee-timer-cancel {
+				background-color: @warning;
+			}
+
+			&.dee-timer-start {
+				background-color: @primary;
+			}
+
+			&.dee-timer-pause {
+				background-color: @blue-grey;
+			}
+		}
+	}
+}

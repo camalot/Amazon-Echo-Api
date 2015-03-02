@@ -1,0 +1,86 @@
+﻿@import "_colors.less";
+@import "_mixins.less";
+
+.dee-notification-control-container {
+	.alarm-switch-container {
+		.d-onoff-switch {
+			position: absolute;
+			right: 0;
+			top: 50%;
+			margin-top: -0.6875rem;
+		}
+	}
+}
+
+.light .d-outclass-bootstrap,
+.white .d-outclass-bootstrap {
+
+	.d-onoff-switch {
+		width: 3rem;
+		input {
+			position: absolute;
+			left: -625rem;
+
+			+ label {
+				border: none;
+				cursor: pointer;
+				display: block;
+				height: 14px;
+				overflow: hidden;
+				background-color: @grey-600;
+				margin: 0;
+				border-radius: 20px;
+
+				> div {
+					float: left;
+					line-height: 1rem;
+					margin: .1875rem 0;
+					margin-left: -2px;
+					padding: 0;
+					background-color: @grey-50;
+					border: solid 1px @grey-100;
+					top: -9px;
+					text-align: center;
+					-webkit-transition: background-color 0.2s ease-out 0s, color 0.2s ease-out 0s, margin 0.2s ease-out 0s;
+					-moz-transition: background-color 0.2s ease-out 0s, color 0.2s ease-out 0s, margin 0.2s ease-out 0s;
+					-o-transition: background-color 0.2s ease-out 0s, color 0.2s ease-out 0s, margin 0.2s ease-out 0s;
+					transition: background-color 0.2s ease-out 0s, color 0.2s ease-out 0s, margin 0.2s ease-out 0s;
+					width: 24px;
+					height: 24px;
+					position: absolute;
+					border-radius: 50px;
+					pointer-events: none;
+					.shadow-z-2();
+
+					&:before {
+						display: none;
+						/*position: absolute;
+						left: -1.5rem;
+						font-weight: 200;
+						font-size: .875rem;
+						color: #999;
+						content: "Off";*/
+					}
+				}
+			}
+
+			&:checked {
+				+ label {
+					background-color: @cyan-500;
+					> div {
+						pointer-events: none;
+						background-color: @cyan-600;
+						border-color: @cyan-600;
+						margin-left: 1.75rem;
+
+						&:before {
+							display: none;
+							/*color: #333;
+							content: "On";*/
+						}
+					}
+				}
+			}
+		}
+	}
+}

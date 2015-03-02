@@ -1,0 +1,100 @@
+﻿@import "_colors.less";
+@import "_mixins.less";
+
+.desktop {
+	#d-content {
+		.dee-search-bar-container {
+			float: right;
+			display: inline-block;
+			width: 300px;
+			text-align: right;
+
+			.d-search-button {
+				top: -2px;
+				background-color: transparent;
+
+				.svg-icon {
+					&.svg-search {
+						fill: @grey-800;
+					}
+				}
+			}
+		}
+
+		#dee-cloud-player-home-content {
+			background-color: @header-color;
+			display: block;
+			width: 100%;
+			height: 50px;
+
+			.dee-cloud-player-home-menu {
+				background-color: transparent;
+				float: left;
+				margin-top: 1px;
+				border-bottom: none;
+
+				.dee-menu-nav-bar {
+					border: none;
+					padding: 0;
+					margin-top: 9px;
+					margin-left: 0;
+				}
+
+				.dee-menu-list {
+					> li {
+						padding-left: 10px;
+						padding-right: 10px;
+
+						&:not(.selected) {
+							&:first-child {
+							}
+
+							&:hover, &:active {
+								color: @white;
+							}
+						}
+
+						&.selected {
+							border-bottom-width: 3px;
+							border-bottom-color: @tab-selection-color;
+							color: @white;
+							padding-left: 10px;
+							padding-right: 10px;
+						}
+					}
+				}
+
+				#dee-cloud-player-menu-content {
+					top: 3rem;
+				}
+			}
+		}
+	}
+}
+
+.dark .dee-music-artist-tabs {
+	background-color: @header-color;
+	border-bottom: none;
+}
+
+.dark .dee-music-artist-tabs > li {
+	color: rgba(255,255,255,.7);
+}
+
+.dark .dee-music-artist-tabs > li.dee-selected-tab {
+	border-bottom-width: 3px;
+	border-bottom-color: @tab-selection-color;
+	color: @white;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+body.no-touch .dark .dee-music-artist-tabs > li:hover, body:not(.no-touch) .dark .dee-music-artist-tabs > li:active {
+	color: @white;
+}
+
+
+.dark #dee-search-bar {
+	border: none;
+	background-color: @white;
+}

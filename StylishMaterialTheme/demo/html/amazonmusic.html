@@ -92,8 +92,8 @@
 		}
 	</style>
 </head>
-<body class="d-background no-touch hasGoogleVoiceExt" role="application" data-feedly-mini="yes">
-	<div id="d-main" class="desktop" aria-live="assertive">
+<body class="d-background hasGoogleVoiceExt no-touch" role="application" data-feedly-mini="yes">
+<div id="d-main" class="desktop" aria-live="assertive">
 		<div id="d-navigate" aria-hidden="false">
 			<div class="d-scroll-window overflow">
 				<div class="d-scroll-content">
@@ -103,7 +103,7 @@
 
 
 
-							<dd data-action="navigate" data-route="cards" id="iHome" class="d-side-menu-item d-menu-selected">
+							<dd data-action="navigate" data-route="cards" id="iHome" class="d-side-menu-item">
 								<span class="font-light">Home</span>
 
 							</dd>
@@ -122,7 +122,7 @@
 							<dd data-action="navigate" data-route="todos" id="iTodos" class="d-side-menu-item">
 								<span class="font-light">To-do List</span>
 
-								<span class="count">1</span>
+								<span class="count">2</span>
 
 							</dd>
 
@@ -167,7 +167,7 @@
 
 
 
-							<dd data-action="navigate" data-route="music/AMAZON_MUSIC" id="iAmazonCloudPlayer" class="d-side-menu-item">
+							<dd data-action="navigate" data-route="music/AMAZON_MUSIC" id="iAmazonCloudPlayer" class="d-side-menu-item d-menu-selected">
 								<span class="font-light">Amazon Music</span>
 
 							</dd>
@@ -242,7 +242,7 @@
 		</div>
 		<div id="d-app">
 			<div>
-				<div id="d-page" class="light">
+				<div id="d-page" class="dark">
 					<div id="d-header">
 						<div>
 							<div class="controls">
@@ -251,7 +251,7 @@
 
 
 							<div class="title">
-								<h3 data-automation-id="header-text" class="maintext">Home</h3>
+								<h3 data-automation-id="header-text" class="maintext">Amazon Music</h3>
 
 							</div>
 						</div>
@@ -259,482 +259,115 @@
 					<div id="d-message"><div class="d-message-view"></div></div>
 					<div id="d-loading">
 						<div class="d-loading-view" style="display: none;">
-							<div class="d-spinner-container fullscreen">
+							<div class="d-spinner-container fullscreen" style="display: none;">
 								<div class="d-large-spinner"></div>
 							</div>
 						</div>
 					</div>
-					<div id="d-content" style="bottom: 66px;">
-						<div class="d-scroll-window overflow">
-							<div class="d-scroll-content">
-								<div class="d-cardstream-list-view">
-									<div id="A1RZ8VYORTC2UF#1425047239803" class="d-card">
-										<section class="d-card-image-region large"><div class="d-card-image active"><img src="http://ecx.images-amazon.com/images/I/51TDVQ0sYeL._SS500_.jpg"><svg class="svg-icon svg-circle-play"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-circle-play"></use></svg></div></section>
-										<section class="d-card-title-region large">
-											<div>
-												<h1 class="d-card-title">Imported</h1>
-												<h2 class="d-card-title sub">Playlist from your library</h2>
-											</div>
-										</section>
-										<section class="d-card-text-region large"></section>
-										<section class="d-primary-actions-region large">
-											<ul class="d-actions primary">
-												<li class="d-action" data-action-index="0">
-													Search Digital Music Store for more music
+					<div id="d-account-picker">
+						<div>
+						</div>
+					</div>
+					<div id="d-content" class="" style="bottom: 66px;">
+						<div>
+							<div class="dee-search-bar-container">
+								<input id="dee-search-bar" type="text" class="dee-music-search-bar input-block-level" placeholder="Search your library" data-id="search-bar" value="">
+								<span class="dee-clear-button empty" data-id="clear-button">
+									<svg class="svg-icon svg-close dee-icon-cancel"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close"></use></svg>
+								</span>
+								<span class="d-search-button">
+									<span class="svg-icon">
+										<svg class="svg-icon svg-search"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"></use></svg>
+									</span>
+								</span>
+								<span class="dee-spinner-icon empty" data-id="spinner-button"></span>
+							</div>
+							<div id="dee-cloud-player-home-content">
+								<div>
+									<div class="dee-cloud-player-home-menu">
+										<div class="dee-menu-nav-bar">
+											<ul class="dee-menu-list">
+												<li id="dee-music-playlists-tab" class="dee-music-text-item-list selected" data-id="playlists">
+													Playlists
 												</li>
-
-												<li class="d-action" data-action-index="1">
-													Search Prime Music for free music
+												<li id="dee-music-artists-tab" class="dee-music-text-item-list" data-id="artists">
+													Artists
 												</li>
-
-												<li class="d-action" data-action-index="2">
-													Browse your library
+												<li id="dee-music-albums-tab" class="dee-music-text-item-list" data-id="albums">
+													Albums
 												</li>
-
+												<li id="dee-music-tracks-tab" class="dee-music-text-item-list" data-id="tracks">
+													Songs
+												</li>
+												<li id="dee-music-genres-tab" class="dee-music-text-item-list" data-id="genres">
+													Genres
+												</li>
 											</ul>
-										</section>
-
-										<section class="d-card-footer-region">
-											<section id="A1RZ8VYORTC2UF#1425047239803" class="d-card-footer">
-												<section class="d-secondary-actions-region collapsible-section" style="display: block;"></section>
-												<section class="d-feedback-actions-region collapsible-section" style="display: block;"></section>
-												<section class="d-delete-action-region collapsible-section" style="display: block;">
-													<ul class="d-actions delete-action">
-														<li class="d-action" data-action-index="0">
-															Remove card <span class="navigate" data-action="navigate" data-route="help/node/201602230">Learn more</span>
-														</li>
-
-													</ul>
-												</section>
-												<div class="d-more-less-menu-region">
-													<div>
-														<button class="d-card-menu">
-
-															Less<span class="inline-icon"><svg class="svg-icon svg-carat-up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-carat-up"></use></svg></span>
-
-														</button>
-													</div>
-												</div>
-											</section>
-										</section>
-									</div><div id="A1RZ8VYORTC2UF#1425015928592" class="d-card">
-										<section class="d-card-image-region large"><div class="d-card-image active"><img src="http://ecx.images-amazon.com/images/I/51TDVQ0sYeL._SS500_.jpg"><svg class="svg-icon svg-circle-play"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-circle-play"></use></svg></div></section>
-										<section class="d-card-title-region large">
-											<div>
-												<h1 class="d-card-title">Recently Added</h1>
-												<h2 class="d-card-title sub">Playlist from your library</h2>
-											</div>
-										</section>
-										<section class="d-card-text-region large"></section>
-										<section class="d-primary-actions-region large">
-											<ul class="d-actions primary">
-												<li class="d-action" data-action-index="0">
-													Search Digital Music Store for more music
-												</li>
-
-												<li class="d-action" data-action-index="1">
-													Search Prime Music for free music
-												</li>
-
-												<li class="d-action" data-action-index="2">
-													Browse your library
-												</li>
-
-											</ul>
-										</section>
-
-										<section class="d-card-footer-region">
-											<section id="A1RZ8VYORTC2UF#1425015928592" class="d-card-footer">
-												<section class="d-secondary-actions-region collapsible-section" style="display: none;"></section>
-												<section class="d-feedback-actions-region collapsible-section" style="display: none;"></section>
-												<section class="d-delete-action-region collapsible-section" style="display: none;">
-													<ul class="d-actions delete-action">
-														<li class="d-action" data-action-index="0">
-															Remove card <span class="navigate" data-action="navigate" data-route="help/node/201602230">Learn more</span>
-														</li>
-
-													</ul>
-												</section>
-												<div class="d-more-less-menu-region">
-													<div>
-														<button class="d-card-menu">
-
-															More<span class="inline-icon"><svg class="svg-icon svg-carat-down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-carat-down"></use></svg></span>
-
-														</button>
-													</div>
-												</div>
-											</section>
-										</section>
-									</div><div id="A1RZ8VYORTC2UF#1425014101415" class="d-card">
-										<section class="d-card-image-region large"><div class="d-card-image active"><img src="http://ecx.images-amazon.com/images/I/51TDVQ0sYeL._SS500_.jpg"><svg class="svg-icon svg-circle-play"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-circle-play"></use></svg></div></section>
-										<section class="d-card-title-region large">
-											<div>
-												<h1 class="d-card-title">Recently Added</h1>
-												<h2 class="d-card-title sub">Playlist from your library</h2>
-											</div>
-										</section>
-										<section class="d-card-text-region large"></section>
-										<section class="d-primary-actions-region large">
-											<ul class="d-actions primary">
-												<li class="d-action" data-action-index="0">
-													Search Digital Music Store for more music
-												</li>
-
-												<li class="d-action" data-action-index="1">
-													Search Prime Music for free music
-												</li>
-
-												<li class="d-action" data-action-index="2">
-													Browse your library
-												</li>
-
-											</ul>
-										</section>
-
-										<section class="d-card-footer-region">
-											<section id="A1RZ8VYORTC2UF#1425014101415" class="d-card-footer">
-												<section class="d-secondary-actions-region collapsible-section" style="display: none;"></section>
-												<section class="d-feedback-actions-region collapsible-section" style="display: none;"></section>
-												<section class="d-delete-action-region collapsible-section" style="display: none;">
-													<ul class="d-actions delete-action">
-														<li class="d-action" data-action-index="0">
-															Remove card <span class="navigate" data-action="navigate" data-route="help/node/201602230">Learn more</span>
-														</li>
-
-													</ul>
-												</section>
-												<div class="d-more-less-menu-region">
-													<div>
-														<button class="d-card-menu">
-
-															More<span class="inline-icon"><svg class="svg-icon svg-carat-down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-carat-down"></use></svg></span>
-
-														</button>
-													</div>
-												</div>
-											</section>
-										</section>
-									</div><div id="A1RZ8VYORTC2UF#1425013876173" class="d-card">
-										<section class="d-card-image-region large"><div class="d-card-image active"><img src="http://ecx.images-amazon.com/images/I/51TDVQ0sYeL._SS500_.jpg"><svg class="svg-icon svg-circle-play"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-circle-play"></use></svg></div></section>
-										<section class="d-card-title-region large">
-											<div>
-												<h1 class="d-card-title">Imported</h1>
-												<h2 class="d-card-title sub">Playlist from your library</h2>
-											</div>
-										</section>
-										<section class="d-card-text-region large"></section>
-										<section class="d-primary-actions-region large">
-											<ul class="d-actions primary">
-												<li class="d-action" data-action-index="0">
-													Search Digital Music Store for more music
-												</li>
-
-												<li class="d-action" data-action-index="1">
-													Search Prime Music for free music
-												</li>
-
-												<li class="d-action" data-action-index="2">
-													Browse your library
-												</li>
-
-											</ul>
-										</section>
-
-										<section class="d-card-footer-region">
-											<section id="A1RZ8VYORTC2UF#1425013876173" class="d-card-footer">
-												<section class="d-secondary-actions-region collapsible-section" style="display: none;"></section>
-												<section class="d-feedback-actions-region collapsible-section" style="display: none;"></section>
-												<section class="d-delete-action-region collapsible-section" style="display: none;">
-													<ul class="d-actions delete-action">
-														<li class="d-action" data-action-index="0">
-															Remove card <span class="navigate" data-action="navigate" data-route="help/node/201602230">Learn more</span>
-														</li>
-
-													</ul>
-												</section>
-												<div class="d-more-less-menu-region">
-													<div>
-														<button class="d-card-menu">
-
-															More<span class="inline-icon"><svg class="svg-icon svg-carat-down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-carat-down"></use></svg></span>
-
-														</button>
-													</div>
-												</div>
-											</section>
-										</section>
-									</div><div id="A1RZ8VYORTC2UF#1425010798653" class="d-card">
-										<section class="d-card-image-region large"><div class="d-card-image active"><img src="http://ecx.images-amazon.com/images/I/51TDVQ0sYeL._SS500_.jpg"><svg class="svg-icon svg-circle-play"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-circle-play"></use></svg></div></section>
-										<section class="d-card-title-region large">
-											<div>
-												<h1 class="d-card-title">Recently Added</h1>
-												<h2 class="d-card-title sub">Playlist from your library</h2>
-											</div>
-										</section>
-										<section class="d-card-text-region large"></section>
-										<section class="d-primary-actions-region large">
-											<ul class="d-actions primary">
-												<li class="d-action" data-action-index="0">
-													Search Digital Music Store for more music
-												</li>
-
-												<li class="d-action" data-action-index="1">
-													Search Prime Music for free music
-												</li>
-
-												<li class="d-action" data-action-index="2">
-													Browse your library
-												</li>
-
-											</ul>
-										</section>
-
-										<section class="d-card-footer-region">
-											<section id="A1RZ8VYORTC2UF#1425010798653" class="d-card-footer">
-												<section class="d-secondary-actions-region collapsible-section" style="display: block;"></section>
-												<section class="d-feedback-actions-region collapsible-section" style="display: block;"></section>
-												<section class="d-delete-action-region collapsible-section" style="display: block;">
-													<ul class="d-actions delete-action">
-														<li class="d-action" data-action-index="0">
-															Remove card <span class="navigate" data-action="navigate" data-route="help/node/201602230">Learn more</span>
-														</li>
-
-													</ul>
-												</section>
-												<div class="d-more-less-menu-region">
-													<div>
-														<button class="d-card-menu">
-
-															Less<span class="inline-icon"><svg class="svg-icon svg-carat-up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-carat-up"></use></svg></span>
-
-														</button>
-													</div>
-												</div>
-											</section>
-										</section>
-									</div><div id="A1RZ8VYORTC2UF#1424998144808" class="d-card" style="display: block;">
-										<div class="d-to-do-item d-to-do-type-shopping  card-view">
-
-											<div class="d-card-stripe"></div>
-
-											<div class="d-to-do-check">
-												<input type="checkbox" class="check-input" id="d-to-do-check-A1RZ8VYORTC2UF#87859322-dcea-937b-c92e-6cd8da68efc2">
-												<label for="d-to-do-check-A1RZ8VYORTC2UF#87859322-dcea-937b-c92e-6cd8da68efc2">
-
-													<span class="svg-icon svg-checkbox"><svg class="squircle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-squircle-shopping"></use></svg><svg class="check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-squircle-check"></use></svg></span>
-
-												</label>
-											</div>
-
-											<div class="d-button d-delete action-delete">Delete</div>
-
-											<div class="d-input-wrapper">
-												<span class="title d-truncate d-edit-pencil">Toilet Paper<span class="inline-icon edit-icon-svg"><svg class="svg-icon svg-edit no-events"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-edit"></use></svg></span></span>
-												<textarea class="title" maxlength="255" rows="1" style="display: none;">Toilet Paper</textarea>
-											</div>
-
-
-											<div class="list-type">Shopping List</div>
-
-
-
-
-											<div class="d-secondary-actions-region">
-												<ul class="d-actions secondary">
-
-
-													<li class="d-action action-view-list">View Shopping List</li>
-
-
-
-													<li class="d-action action-search-on-amazon">Search Amazon for Toilet Paper</li>
-													<li class="d-action action-search-on-bing">Search Bing for Toilet Paper</li>
-
-
-													<li class="d-action action-move-to-other">Move item to To-do List</li>
-
-												</ul>
-											</div>
-
-
-
-											<section class="d-feedback-actions-region">
-												<ul class="d-actions feedback large"></ul>
-											</section>
-											<section class="d-delete-action-region">
-												<ul class="d-actions delete-action">
-													<li class="d-action" data-action-index="0">
-														Remove card <span class="navigate" data-action="navigate" data-route="help/node/201602230">Learn more</span>
-													</li>
-
-												</ul>
-											</section>
-
-
-											<div class="d-more-less-menu-region">
-												<button class="d-card-menu open">
-													Less<span class="inline-icon"><svg class="svg-icon svg-carat-up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-carat-up"></use></svg></span>
-												</button>
-											</div>
-
-
 										</div>
-									</div><div id="A1RZ8VYORTC2UF#1424995880872" class="d-card" style="display: block;">
-										<div class="d-to-do-item d-to-do-type-task  card-view">
+										<div id="dee-cloud-player-menu-content">
+											<div class="d-scroll-window overflow">
+												<div class="d-scroll-content">
+													<div>
+														<div id="dee-playlists-home" class="dee-playlists-results">
+															<ul id="dee-smart-playlist-results" class="dee-playlists-preview">
+																<div>
+																	<li class="dee-music-list-header">Auto Playlists</li>
 
-											<div class="d-card-stripe"></div>
+																	<li class="dee-music-text-item-list" data-playlistid="IMPORTED-V0-OBJECTID" data-playlistname="Imported">
+																		<div class="dee-music-center">
+																			<div class="dee-music-row-content">
+																				<div class="dee-music-row-text">Imported</div>
 
-											<div class="d-to-do-check">
-												<input type="checkbox" class="check-input" id="d-to-do-check-A1RZ8VYORTC2UF#232eb260-d42d-1ffa-bf15-9d6c9c999660">
-												<label for="d-to-do-check-A1RZ8VYORTC2UF#232eb260-d42d-1ffa-bf15-9d6c9c999660">
+																			</div>
+																		</div>
+																	</li>
 
-													<span class="svg-icon svg-checkbox"><svg class="squircle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-squircle-todo"></use></svg><svg class="check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-squircle-check"></use></svg></span>
+																	<li class="dee-music-text-item-list" data-playlistid="PURCHASES-V0-OBJECTID" data-playlistname="Purchased">
+																		<div class="dee-music-center">
+																			<div class="dee-music-row-content">
+																				<div class="dee-music-row-text">Purchased</div>
 
-												</label>
+																			</div>
+																		</div>
+																	</li>
+
+																	<li class="dee-music-text-item-list" data-playlistid="RECENTLY-ADDED-V0-OBJECTID" data-playlistname="Recently Added">
+																		<div class="dee-music-center">
+																			<div class="dee-music-row-content">
+																				<div class="dee-music-row-text">Recently Added</div>
+
+																			</div>
+																		</div>
+																	</li>
+
+
+																</div>
+															</ul>
+															<ul id="dee-my-playlist-results" class="dee-playlists-preview"><div></div></ul>
+															<ul id="dee-prime-playlist-results" class="dee-playlists-preview">
+																<div>
+																	<li class="dee-music-list-header">Prime Playlists</li>
+
+																	<li class="dee-music-text-item-list" data-playlistid="ATVPDKIKX0DER:B00RBXC7GY" data-playlistname="Pop: Top Prime Songs 2014">
+																		<div class="dee-music-center">
+																			<div class="dee-music-row-content">
+																				<div class="dee-music-row-text">Pop: Top Prime Songs 2014</div>
+
+																				<div class="dee-music-row-subtext">50 songs</div>
+
+																			</div>
+																		</div>
+																	</li>
+
+
+																</div>
+															</ul>
+														</div>
+													</div>
+												</div>
 											</div>
-
-											<div class="d-button d-delete action-delete">Delete</div>
-
-											<div class="d-input-wrapper">
-												<span class="title d-truncate d-edit-pencil">test<span class="inline-icon edit-icon-svg"><svg class="svg-icon svg-edit no-events"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-edit"></use></svg></span></span>
-												<textarea class="title" maxlength="255" rows="1" style="display: none;">test</textarea>
-											</div>
-
-
-											<div class="list-type">To-do List</div>
-
-
-
-
-											<div class="d-secondary-actions-region">
-												<ul class="d-actions secondary">
-
-
-													<li class="d-action action-view-list">View To-do List</li>
-
-
-
-
-													<li class="d-action action-move-to-other">Move item to Shopping List</li>
-
-												</ul>
-											</div>
-
-
-
-											<section class="d-feedback-actions-region">
-												<ul class="d-actions feedback large"></ul>
-											</section>
-											<section class="d-delete-action-region">
-												<ul class="d-actions delete-action">
-													<li class="d-action" data-action-index="0">
-														Remove card <span class="navigate" data-action="navigate" data-route="help/node/201602230">Learn more</span>
-													</li>
-
-												</ul>
-											</section>
-
-
-											<div class="d-more-less-menu-region">
-												<button class="d-card-menu open">
-													Less<span class="inline-icon"><svg class="svg-icon svg-carat-up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-carat-up"></use></svg></span>
-												</button>
-											</div>
-
-
 										</div>
-									</div><div id="A1RZ8VYORTC2UF#1424982580663" class="d-card">
-										<section class="d-card-image-region large"><div class="d-card-image active"><img src="http://ecx.images-amazon.com/images/I/51TDVQ0sYeL._SS500_.jpg"><svg class="svg-icon svg-circle-play"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-circle-play"></use></svg></div></section>
-										<section class="d-card-title-region large">
-											<div>
-												<h1 class="d-card-title">Recently Added</h1>
-												<h2 class="d-card-title sub">Playlist from your library</h2>
-											</div>
-										</section>
-										<section class="d-card-text-region large"></section>
-										<section class="d-primary-actions-region large">
-											<ul class="d-actions primary">
-												<li class="d-action" data-action-index="0">
-													Search Digital Music Store for more music
-												</li>
-
-												<li class="d-action" data-action-index="1">
-													Search Prime Music for free music
-												</li>
-
-												<li class="d-action" data-action-index="2">
-													Browse your library
-												</li>
-
-											</ul>
-										</section>
-
-										<section class="d-card-footer-region">
-											<section id="A1RZ8VYORTC2UF#1424982580663" class="d-card-footer">
-												<section class="d-secondary-actions-region collapsible-section" style="display: none;"></section>
-												<section class="d-feedback-actions-region collapsible-section" style="display: none;"></section>
-												<section class="d-delete-action-region collapsible-section" style="display: none;">
-													<ul class="d-actions delete-action">
-														<li class="d-action" data-action-index="0">
-															Remove card <span class="navigate" data-action="navigate" data-route="help/node/201602230">Learn more</span>
-														</li>
-
-													</ul>
-												</section>
-												<div class="d-more-less-menu-region">
-													<div>
-														<button class="d-card-menu">
-
-															More<span class="inline-icon"><svg class="svg-icon svg-carat-down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-carat-down"></use></svg></span>
-
-														</button>
-													</div>
-												</div>
-											</section>
-										</section>
-									</div><div id="A1RZ8VYORTC2UF#1424978814472" class="d-card">
-										<section class="d-card-image-region large"><div class="d-card-image active"><img src="http://img.iheart.com/sca/imscale?w=500&amp;img=http://radioedit.iheart.com/service/img/nop()/assets/images/6464.png"><svg class="svg-icon svg-circle-play"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-circle-play"></use></svg></div></section>
-										<section class="d-card-title-region large">
-											<div>
-												<h1 class="d-card-title">The Loop 97.9</h1>
-												<h2 class="d-card-title sub">Station on iHeartRadio</h2>
-											</div>
-										</section>
-										<section class="d-card-text-region large"></section>
-										<section class="d-primary-actions-region large">
-											<ul class="d-actions primary">
-												<li class="d-action" data-action-index="0">
-													Browse stations from iHeartRadio
-												</li>
-
-											</ul>
-										</section>
-
-										<section class="d-card-footer-region">
-											<section id="A1RZ8VYORTC2UF#1424978814472" class="d-card-footer">
-												<section class="d-secondary-actions-region collapsible-section" style="display: none;"></section>
-												<section class="d-feedback-actions-region collapsible-section" style="display: none;"></section>
-												<section class="d-delete-action-region collapsible-section" style="display: none;">
-													<ul class="d-actions delete-action">
-														<li class="d-action" data-action-index="0">
-															Remove card <span class="navigate" data-action="navigate" data-route="help/node/201602230">Learn more</span>
-														</li>
-
-													</ul>
-												</section>
-												<div class="d-more-less-menu-region">
-													<div>
-														<button class="d-card-menu">
-
-															More<span class="inline-icon"><svg class="svg-icon svg-carat-down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-carat-down"></use></svg></span>
-
-														</button>
-													</div>
-												</div>
-											</section>
-										</section>
-									</div><div id="A1RZ8VYORTC2UF#1424931397806" class="d-card" style="display: none;"></div><div id="A1RZ8VYORTC2UF#1424913089903" class="d-card" style="display: none;"></div><div id="d-cardstream-get-more" class="d-button-view d-card" data-automation-id="d-cardstream-list-get-more">More</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -743,7 +376,7 @@
 			</div>
 		</div>
 		<div id="d-player-bar-container">
-			<div class="d-player-bar" style="">
+			<div class="d-player-bar" style="display: block;">
 				<div class="d-controls-bar large ">
 					<div class="d-meta-container" style="max-width: 700.46875px;">
 						<div>
@@ -768,7 +401,7 @@
 											<div class="d-slider-bar" style="height: 0%;">
 												<div class="d-slider-grabber">
 													<div class="d-slider-grabber-fill"></div>
-													<div class="d-volume-callout">0</div>
+													<div class="d-volume-callout" style="display: none;">0</div>
 													<div class="d-slider-grabber-icon"></div>
 												</div>
 											</div>
