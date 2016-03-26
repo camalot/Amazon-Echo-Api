@@ -1,19 +1,14 @@
 version: 0.1.{build}
-environment: VisualStudio2015
-slack: "#foo-notifications"
+environment: kitchenci
+description: ''
+slack: "#cookbook-notifications"
+watch:
+  projects:
+    - Job-Dsl
+    - junk
+  threshold: SUCCESS
 build:
   before:
-  - groovy:
-      file: 'path/to/before.groovy'
-  - groovy:
-      command: "println woot!!! /n  more wootness!"
-  - shell: 'echo hello > foo.txt'
   - shell: 'foodcritic -X -f correctness .'
-  - shell: 'kitchen verify'
   build:
-    - groovy:
-        file: 'path/to/build.groovy'
-  after:
-    - groovy:
-        file: 'path/to/after.groovy'
-
+  - shell: 'kitchen test --destroy always'
