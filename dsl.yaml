@@ -4,7 +4,7 @@ slack: "#foo-notifications"
 build:
   before:
   - groovy:
-    file: 'path/to/before.groovy'
+      file: 'path/to/before.groovy'
   - groovy: "println woot!!! /n  more wootness!"
   - shell: 'echo hello > foo.txt'
   - shell: 'foodcritic -X -f correctness .'
