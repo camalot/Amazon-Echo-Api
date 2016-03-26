@@ -5,11 +5,15 @@ build:
   before:
   - groovy:
       file: 'path/to/before.groovy'
-  - groovy: "println woot!!! /n  more wootness!"
+  - groovy:
+      command: "println woot!!! /n  more wootness!"
   - shell: 'echo hello > foo.txt'
   - shell: 'foodcritic -X -f correctness .'
   - shell: 'kitchen verify'
   build:
-    - groovy: 'path/to/build.groovy'
+    - groovy:
+        file: 'path/to/build.groovy'
   after:
-    - groovy: 'path/to/after.groovy'
+    - groovy:
+        file: 'path/to/after.groovy'
+
