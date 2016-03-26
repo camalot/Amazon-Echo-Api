@@ -10,5 +10,5 @@ watch:
 build:
   before:
   - shell: 'foodcritic -X -f correctness .'
-  build:
+  run:
   - shell: 'kitchen test --destroy always'
