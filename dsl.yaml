@@ -12,4 +12,4 @@ build:
   build:
     - groovy: 'path/to/build.groovy'
   after:
-    groovy: 'path/to/after.groovy'
+    - groovy: 'path/to/after.groovy'
