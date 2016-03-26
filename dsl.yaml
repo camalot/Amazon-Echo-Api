@@ -2,14 +2,14 @@ version: 0.1.{build}
 environment: VisualStudio2015
 build:
   before:
-    groovy:
-      file: 'path/to/before.groovy'
-    groovy: '''
+    - groovy:
+        file: 'path/to/before.groovy'
+    - groovy: '''
       println woot!!!
     '''
-    shell: 'echo hello > foo.txt'
-    shell: 'foodcritic -X -f correctness .'
-    shell: 'kitchen verify'
+    - shell: 'echo hello > foo.txt'
+    - shell: 'foodcritic -X -f correctness .'
+    - shell: 'kitchen verify'
   build:
     groovy: 'path/to/build.groovy'
   after:
