@@ -2,10 +2,10 @@ version: 0.1.{build}
 environment: VisualStudio2015
 build:
   before:
-    - groovy: 'path/to/before.groovy'
-    - shell: 'path/to/before.sh'
+    groovy: 'path/to/before.groovy'
+    shell: 'path/to/before.sh'
   build:
-    - groovy: 'path/to/build.groovy'
+    groovy: 'path/to/build.groovy'
   after:
-    - groovy: 'path/to/after.groovy'
+    groovy: 'path/to/after.groovy'
     
